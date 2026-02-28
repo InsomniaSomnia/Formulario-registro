@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrese</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/scripts.js" defer></script>
+</head>
+<body>
+    <div class="contenedor-principal">
+        <form id="formulario-registro" novalidate>
+            <h2>Crear tu cuenta</h2>
+
+            <div class="datos-entrada">
+                <label for="nombreusuario">Nombre de Usuario</label>
+                <input type="text" id="nombreusuario" placeholder="Ej: Pedrito alimaña" required minlength="4">
+                <span class="mensaje-error">El Usuario debe tener al menos 4 caracteres</span>
+            </div>
+
+            <div class="datos-entrada">
+                <label for="correo">Correo Electronico</label>
+                <input type="email" id="correo" placeholder="tu@correo.com" required>
+                <span class="mensaje-error">Ingresa un correo Electronico válido</span>
+            </div>
+
+            <div class="datos-entrada">
+                <label for="contraseña">Contraseña</label>
+                <input type="password" id="contraseña" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$">
+                <span class="mensaje-error">Mínimo 8 caracteres, incluyendo letras y números</span>
+                <div class="nivel-seguridad" id="nivelseguridad"></div>
+            </div>
+            <button type="submit" id="boton-enviar">Registrarme</button>
+        </form>
+    </div>
+
+</body>
+</html>

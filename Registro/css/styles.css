@@ -1,0 +1,78 @@
+:root {
+    --color-principal: #6366f1;
+    --color-error: #ef4444;
+    --color-exitoso: #22c55e;
+    --color-fondo: #0f172a;
+}   
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--color-fondo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.contenedor-principal{
+    background: rgba(225, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid rgba(225, 255, 255, 0.1);
+    width: 350px;
+    color: whitesmoke;
+}
+.datos-entrada{
+    margin-bottom: 1.5rem;
+    position:relative;
+}
+label{
+    display:block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+input{
+    width: 100%;
+    padding: 10px;
+    background: rgba(225, 255, 255, 0.2);
+    border: 2px solid transparent;
+    border-radius: 5px;
+    color: white;
+    box-sizing: border-box;
+    transition: 0.3s;    
+}
+
+input:focus{
+    outline: none;
+    border-color: var(--color-principal);
+}
+
+input:invalid:not(:placeholder-shown){
+    border-color: var(--color-error);
+}
+.mensaje-error{
+    color: var(--color-error);
+    font-size: 0.75rem;
+    display: none;
+}
+input:invalid:not(:placeholder-shown)+.mensaje-error{
+    display: block;
+}
+button{
+    width: 100%;
+    padding: 12px;
+    background: var(--color-principal);
+    border: none;
+    color:whitesmoke;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.nivel-seguridad{
+    height: 4px;
+    width: 0%;
+    background: var(--color-error);
+    margin-top: 5px;
+    transition: 0.5s;
+}
+
