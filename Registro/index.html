@@ -7,8 +7,12 @@
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/scripts.js" defer></script>
 </head>
+
 <body>
-    <div class="contenedor-principal">
+    <!-- Seccion de Registro-->
+    <div id="vista-registro" >
+        
+        <div class="contenedor-principal" >
         <form id="formulario-registro" novalidate>
             <h2>Crear tu cuenta</h2>
 
@@ -27,12 +31,70 @@
             <div class="datos-entrada">
                 <label for="contraseña">Contraseña</label>
                 <input type="password" id="contraseña" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$">
-                <span class="mensaje-error">Mínimo 8 caracteres, incluyendo letras y números</span>
+                <span class="mensaje-error">Mínimo 8 caracteres, incluyendo letras y números </span>
                 <div class="nivel-seguridad" id="nivelseguridad"></div>
+
+                <div class="mostrar-contraseña">
+                    <input type="checkbox" id="ver-contraseña">
+                    <label for="ver-contraseña">Mostrar Contraseña</label>
+                </div>
             </div>
+
+            <div class="datos-entrada">
+                <label for="confirmarcontraseña">Confirmar Contraseña</label>
+                <input type="password" id="confirmarcontraseña" required>
+                <span class="mensaje-error">Las contraseñas no coinciden</span>
+               
+                <div class="mostrar-contraseña">
+                    <input type="checkbox" id="mostrar-contraseña">
+                    <label for="mostrar-contraseña">Mostrar Contraseña</label>
+                </div>
+            </div>
+
             <button type="submit" id="boton-enviar">Registrarme</button>
+            
+            <p>¿Ya tienes cuenta?
+            <a href="#" id="ir-login">Inicia sesión</a>
+            </p>
+
         </form>
+        </div>
     </div>
+
+
+    <!--Seccion de Login -->
+    <div id="vista-login" style="display: none;">
+        <div class="contenedor-principal">
+            <h2>Iniciar Sesión</h2>
+            
+
+            <form id="formulario-login" novalidate>
+                <div class="datos-entrada">
+
+                    <label for="login-correo">Correo Electrónico</label>
+                    <input type="email" id="login-correo" placeholder="tu@correo.com" required>
+                    <span class="mensaje-error">Ingresa un correo electrónico válido</span>
+                </div>
+
+                <div class="datos-entrada">
+                    <label for="login-password">Contraseña</label>
+                    <input type="password" id="login-password" required>
+                    <span class="mensaje-error">La contraseña es incorrecta</span>
+
+                    <div class="mostrar-contraseña">
+                        <input type="checkbox" id="ver-contraseña-login">
+                        <label for="ver-contraseña-login">Mostrar Contraseña</label>
+
+                    </div>
+                </div>
+
+                <button type="submit" id="boton-iniciar-sesion">Iniciar Sesión</button>
+                <p>¿No tienes cuenta?
+                <a href="#" id="ir-registro">Regístrate</a>
+                </p> 
+                
+            </form>
+        </div>
 
 </body>
 </html>

@@ -31,7 +31,7 @@ label{
     margin-bottom: 5px;
     font-size: 0.9rem;
 }
-input{
+input:not([type="checkbox"]){
     width: 100%;
     padding: 10px;
     background: rgba(225, 255, 255, 0.2);
@@ -41,6 +41,8 @@ input{
     box-sizing: border-box;
     transition: 0.3s;    
 }
+
+
 
 input:focus{
     outline: none;
@@ -76,3 +78,20 @@ button{
     transition: 0.5s;
 }
 
+.mostrar-contraseña{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.mostrar-contraseña input[type="checkbox"]{
+    width: auto;
+    cursor: pointer;
+}
+
+.mostrar-contraseña label{
+    margin: 0;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
