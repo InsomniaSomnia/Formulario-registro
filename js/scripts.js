@@ -21,9 +21,6 @@ const formularioLogin = document.getElementById('formulario-login');
 const loginCorreo = document.getElementById('login-correo');
 const loginPassword = document.getElementById('login-password');
 
-// Referencia al span de error del campo confirmar contraseña
-// Es el segundo .mensaje-error de la página, por eso usamos querySelectorAll y tomamos el índice [3]
-// Más fácil: agrégale un id en el HTML, por ejemplo id="error-confirmacion"
 const errorConfirmacion = confirmarContrasena.nextElementSibling;
 
 
@@ -42,7 +39,7 @@ password.addEventListener('input', () => {
     else if (fortaleza <= 70) seguridad.style.background = '#f59e0b';
     else seguridad.style.background = '#22c55e';
 
-    // Si el usuario ya había empezado a escribir en confirmar, re-validar
+
     if (confirmarContrasena.value !== '') {
         validarCoincidencia();
     }
@@ -76,7 +73,7 @@ formulario.addEventListener('submit', (e) => {
 
     // Verificar que las contraseñas coincidan 
     if (password.value !== confirmarContrasena.value) {
-        validarCoincidencia(); // Muestra el error visualmente
+        validarCoincidencia(); 
         alert('Las contraseñas no coinciden.');
         return;
     }
@@ -135,7 +132,7 @@ irRegistro.addEventListener('click', () => {
 formularioLogin.addEventListener('submit', (e) => {
     e.preventDefault();
     const email = loginCorreo.value;
-    const password = loginPassword.value;
+    const password = loginpassword.value;
     const usuarios = JSON.parse(localStorage.getItem('usuariosRegistrados')) || [];
 
     const usuarioEncontrado = usuarios.find(u => u.email === email && u.password === password);

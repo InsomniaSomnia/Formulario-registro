@@ -29,7 +29,7 @@ body::before {
 
 .contenedor-principal{
     background: var(--color-contenedor);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
     padding: 2rem;
     border-radius: 15px;
     border: 1px solid rgba(225, 255, 255, 0.1);
